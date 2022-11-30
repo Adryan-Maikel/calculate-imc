@@ -1,0 +1,272 @@
+@import url('https://fonts.googleapis.com/css2?family=Merriweather&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Merriweather', serif;
+}
+body{
+    background: linear-gradient(45deg, #444, #1d1d1d);
+    background-repeat: no-repeat;
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    
+}
+header{
+    position: relative;
+    top: 0;
+    width: 100%;
+    height: 80px;
+    background: linear-gradient(to right, #1a4b68, #007fc9, #1a4b68);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    text-shadow: 2px 3px 10px #000;
+    z-index: 1;
+}
+section#form{
+    position: relative;
+    top: 80px;
+    left: 50%;
+    transform: translate(-50%);
+    width: 280px;
+    height: 300px;
+    background-color: #fff;
+    box-shadow: 0 0 10px 20px #fff;
+    padding: 0 15px;
+    animation: emergeForm 2s ease-out;
+}
+@keyframes emergeForm{
+    0%{
+        top: -300px;
+    }
+    100%{
+        top: 80px;
+    }
+}
+section#form h2{
+    text-align: center;
+    padding: 10px 0;
+}
+section#form legend{
+    text-align: center;
+    padding: 10px 0;
+    margin-bottom: 10px;
+}
+section#form .box-input{
+    width: 100%;
+    height: 60px;
+    position: relative;
+}
+section#form .box-input label{
+    margin-left: 15%;
+}
+section#form .box-input input{
+    width: 80px;
+    border: none;
+    border-bottom: 2px solid #000;
+    outline-color: transparent;
+    background-color: none;
+}
+section#form .box-input input#weight{
+    width: 92px;
+}
+section#form .box-input input:-webkit-autofill {
+    /* Remover cores padrões do navegador no autocomplete */
+    -webkit-box-shadow: 0 0 0 30px #fff inset;
+    -webkit-text-fill-color: #000 !important;
+}
+section#form .box-input i{
+    position: absolute;
+    top: 2px;
+    right: 50px;
+    visibility: hidden;
+}
+section#form .box-input.error i.icon-error{
+    visibility: visible;
+}
+section#form .box-input.error input{
+    border-color: #db5a5a;
+}
+section#form .box-input.success i.icon-success{
+    visibility: visible;
+}
+section#form .box-input.success input{
+    border-color: #4eca64;
+}
+section#form .box-input span{
+    position: absolute;
+    bottom: 12px;
+    left: 15%;
+    color: #db5a5a;
+    transition: 1s;
+}
+section#form .box-buttons{
+    position: relative;
+    width: 100%;
+    height: 50px;
+}
+section#form .box-buttons button{
+    width: 49%;
+    height: 100%;
+    border: none;
+    border-radius: 10px;
+    margin-top: 15px;
+    cursor: pointer;
+    text-transform: uppercase;
+    color: #fff;
+    transition: background-color, box-shadow .5s;
+}
+section#form .box-buttons button#calculate{
+    background-color: #007fc9;
+}
+section#form .box-buttons button#calculate:hover{
+    background-color: #1a4b68;
+    box-shadow: 0 0 10px 5px #1a4b68;
+}
+section#form .box-buttons button#cancel{
+    background-color: #444;
+}
+section#form .box-buttons button#cancel:hover{
+    background-color: #1d1d1d;
+    box-shadow: 0 0 15px 5px #1d1d1d;
+}
+section#box-result{
+    background-color: white;
+    position: absolute;
+    top: 110px;
+    left: -60%;
+    transform: translate(-50%);
+    width: 600px;
+    height: 400px;
+    
+}
+section#box-result.result{
+    transition: left 1s ease-in-out;
+    left: 50%;
+    
+}
+section#box-result h2,
+section#box-result h3{
+    text-align: center;
+    padding: 10px 0;
+}
+
+section#box-result #box-images{
+    height: 256px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+section#box-result #box-images .images{
+    /* border: 3px solid red; */
+    height: 100%;
+    
+}
+.low #img-low{
+    animation: floatingImage 5s ease-in-out infinite;
+}
+.normal #img-normal{
+    animation: floatingImage 5s ease-in-out infinite;
+}
+.excess #img-excess{
+    animation: floatingImage 5s ease-in-out infinite;
+}
+.obesity #img-obesity{
+    animation: floatingImage 5s ease-in-out infinite;
+}
+.extreme-obesity #img-extreme-obesity{
+    animation: floatingImage 5s ease-in-out infinite;
+}
+@keyframes floatingImage{
+    0%, 100%{
+        transform: translate(0);
+    }
+    50%{
+        transform: translate(0, 12px);
+        box-shadow: 0 -30px 50px 0px #fff;
+    }
+}
+footer{
+    position: absolute;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    background-color: #3586ff;
+    color: #fff;
+    min-height: 100px;
+    flex-direction: column;
+}
+footer .social-icons{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 5px 0;
+}
+footer .social-icons li{
+    list-style: none;
+    transition: 1s;
+}
+footer .social-icons li a{
+    font-size: 2em;
+    margin: 0 10px;
+    color: #fff;
+}
+footer .social-icons li:hover {
+    transform: translateY(-10px);
+}
+footer .wave{
+    position: absolute;
+    top: -100px;
+    left: 0;
+    width: 100%;
+    height: 100px;
+    background: url(../img/wave.png);
+    background-size: 1000px 100px;
+}
+footer .wave#wave1{
+    z-index: 1000;
+    opacity: 1;
+    bottom: 0;
+    animation: animateWave 4s linear infinite;
+}
+footer .wave#wave2{
+    z-index: 999;
+    opacity: 0.5;
+    bottom: 10px;
+    animation: animateWaveTwo 4s linear infinite;
+}
+footer .wave#wave3{
+    z-index: 1000;
+    opacity: 0.2;
+    bottom: 15px;
+    animation: animateWave 3s linear infinite;
+}
+footer .wave#wave4{
+    z-index: 999;
+    opacity: 0.7;
+    bottom: 20px;
+    animation: animateWaveTwo 3s linear infinite;
+}
+@keyframes animateWave{
+    0%{
+        background-position-x: 1000px;
+    }
+    100%{
+        background-position-x: 0px;
+    }
+}
+@keyframes animateWaveTwo{
+    0%{
+        background-position-x: 0px;
+    }
+    100%{
+        background-position-x: 1000px;
+    }
+}
